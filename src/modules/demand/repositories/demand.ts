@@ -21,10 +21,7 @@ export class DemandRepository {
 
     if (params.term) {
       query = query.where(query => {
-        return query
-          .where('name', 'ilike', `%${params.term}%`)
-          .orWhere('description', 'ilike', `%${params.term}%`)
-          .orWhere('value', 'ilike', `%${params.term}%`);
+        return query.where('name', 'ilike', `%${params.term}%`).orWhere('description', 'ilike', `%${params.term}%`);
       });
     }
 
